@@ -4,9 +4,11 @@ public class ArrayOps {
         System.out.println(secondMaxValue(myArray1));
         int[] missingArr= {0, 1, 2, 4, 6, 5};
         System.out.println(findMissingInt(missingArr)); 
-        int [] array1 = {2, 2, 3, 7, 8, 3, 2};
+        int [] array1 = {2, 2, 3, 7, 8, 3, 2, 9};
         int [] array2 = {8, 2, 7, 7, 3};
         System.out.println(containsTheSameElements(array1, array2));
+        int [] sortArray =  {1, 3, 2};
+        System.out.println(isSorted(sortArray));
     }
     
     public static int findMissingInt (int []  missingArr) {
@@ -61,9 +63,17 @@ public class ArrayOps {
     }  
         return true;
     }
-    public static boolean isSorted(int [] array) {
-        // Write your code here:
-        return false;
+    public static boolean isSorted(int [] sortArray) {
+        boolean increasing = true;
+        boolean decreasing = true;
+        for (int i = 1; i < sortArray.length; i++) {
+            if (sortArray[i] > sortArray[i - 1]) {
+            decreasing = false;
+        } else if (sortArray[i] < sortArray[i - 1]) {
+           increasing = false; 
+        }
+     }  
+        return increasing || decreasing;
     }
 
 }
