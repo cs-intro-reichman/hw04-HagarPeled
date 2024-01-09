@@ -2,8 +2,11 @@ public class ArrayOps {
     public static void main(String[] args) {
         int[] myArray1= {2, 8, 3, 7, 8};
         System.out.println(secondMaxValue(myArray1));
-        int[] missingArr= {0, 1, 2, 3, 4, 6};
+        int[] missingArr= {0, 1, 2, 4, 6, 5};
         System.out.println(findMissingInt(missingArr)); 
+        int [] array1 = {2, 2, 3, 7, 8, 3, 2};
+        int [] array2 = {8, 2, 7, 7, 3};
+        System.out.println(containsTheSameElements(array1, array2));
     }
     
     public static int findMissingInt (int []  missingArr) {
@@ -32,10 +35,32 @@ public class ArrayOps {
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-        // Write your code here:
-        return false;
+        for (int i=0; i < array1.length; i++){
+            boolean foundInArray2 = false;
+            for (int j = 0; j < array2.length; j++){
+                if (array1[i] == array2[j]) {
+                    foundInArray2 = true;
+                    break;
+            }
+        }
+        if (!foundInArray2) {
+            return false;
+        }
     }
-
+     for (int i = 0; i < array2.length; i++) {
+       boolean foundInArray1 = false;
+            for (int j = 0; j < array1.length; j++) {
+                if (array2[i] == array1[j]) {
+                    foundInArray1 = true;
+                    break;
+               }
+            }
+          if (!foundInArray1) {
+              return false;
+         }
+    }  
+        return true;
+    }
     public static boolean isSorted(int [] array) {
         // Write your code here:
         return false;
