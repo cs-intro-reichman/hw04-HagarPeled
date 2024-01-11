@@ -24,6 +24,16 @@ public class StringOps {
     public static void main(String[] args) {
     String string= "One two tHRee world";
     System.out.println(capVowelsLowRest(string));
+    char chr = 'l';
+            int[] result = allIndexOf(string, chr);
+        System.out.print("{");
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+            if (i < result.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("}");
     }
 
     public static String capVowelsLowRest (String string) {
@@ -33,7 +43,9 @@ public class StringOps {
         
         while (i  < string.length()) {
             char currentChar = string.charAt(i);
-            if (vowels.indexOf(currentChar)!= -1) {
+            if ((currentChar >= 65 && currentChar <= 90) && (vowels.indexOf(currentChar)!= -1)) {
+               sOut += currentChar; 
+            } else if (vowels.indexOf(currentChar)!= -1) {
               sOut += (char) (currentChar - 32);
             } else if ((currentChar >= 97) && (currentChar <= 122)) {
               sOut += currentChar;  
@@ -54,7 +66,24 @@ public class StringOps {
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+    int count = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                count++;
+            }
+        }
+
+        int[] indexes = new int[count];
+        count = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                indexes[count] = i;
+                count++;
+            }
+        }
+
+        return indexes;
     }
 }
