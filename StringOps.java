@@ -34,6 +34,7 @@ public class StringOps {
             }
         }
         System.out.println("}");
+        System.out.println(camelCase(string));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -61,8 +62,46 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String answer = "";
+    int i = 0;
+
+    while (i < string.length()) {
+        if (string.charAt(i) == ' ') {
+            if (i == (string.length() - 1)) {
+                break;
+            } else if (i == 0) {
+                while (i < string.length() && string.charAt(i) == ' ') {
+                    i++;
+                }
+                int newString = string.charAt(i);
+                if (newString >= 65 && newString <= 90) {
+                    answer += (char) (newString + 32);
+                } else {
+                    answer += (char) (newString);
+                }
+            } else {
+                while (i < string.length() && string.charAt(i) == ' ') {
+                    i++;
+                }
+                int newString = string.charAt(i);
+                if (newString >= 65 && newString <= 90) {
+                    answer += (char) (newString + 32);
+                } else {
+                    answer += (char) (newString - 32);
+                }
+            }
+        } else {
+            int newString = string.charAt(i);
+            if (newString >= 65 && newString <= 90) {
+                answer += (char) (newString + 32);
+            } else {
+                answer += (char) (newString);
+            }
+        }
+        i++;
+    }
+
+    return answer;
     }
 
     public static int[] allIndexOf (String string, char chr) {
