@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-    String string= "TwO  words";
+    String string= "OnE twO thrEE wOrld";
     System.out.println(capVowelsLowRest(string));
     char chr = 'l';
             int[] result = allIndexOf(string, chr);
