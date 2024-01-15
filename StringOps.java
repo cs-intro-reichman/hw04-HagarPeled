@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-    String string= "Two  Words";
+    String string= "Hello World";
     System.out.println(capVowelsLowRest(string));
     char chr = 'l';
             int[] result = allIndexOf(string, chr);
@@ -62,7 +62,7 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        String answer = "";
+    String answer = "";
     int i = 0;
 
     while (i < string.length()) {
@@ -70,7 +70,7 @@ public class StringOps {
             if (i == (string.length() - 1)) {
                 break;
             } else if (i == 0) {
-                while (i < string.length() && string.charAt(i) == ' ') {
+                while (string.charAt(i) == ' ') {
                     i++;
                 }
                 int newString = string.charAt(i);
@@ -80,12 +80,12 @@ public class StringOps {
                     answer += (char) (newString);
                 }
             } else {
-                while (i < string.length() && string.charAt(i) == ' ') {
+                while (string.charAt(i) == ' ') {
                     i++;
                 }
                 int newString = string.charAt(i);
                 if (newString >= 65 && newString <= 90) {
-                    answer += (char) (newString + 32);
+                    answer += (char) (newString);
                 } else {
                     answer += (char) (newString - 32);
                 }
