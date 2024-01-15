@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-    String string= "Hello World";
+    String string= "TwO  words";
     System.out.println(capVowelsLowRest(string));
     char chr = 'l';
             int[] result = allIndexOf(string, chr);
@@ -38,7 +38,7 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        String vowels = "aeiou";
+        String vowels = "aeiouAEIOU";
         String sOut= "";
         int i=0;
         
